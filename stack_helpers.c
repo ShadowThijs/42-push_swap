@@ -1,35 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack_helpers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 14:59:50 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/10/23 15:52:36 by tlogtenb         ###   ########.fr       */
+/*   Created: 2025/10/23 15:52:55 by tlogtenb          #+#    #+#             */
+/*   Updated: 2025/10/23 15:52:56 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-
-# define PUSH_SWAP_H
-
-# include <stdbool.h>
-
-typedef struct s_node
-{
-	int				number;
-	struct s_node	*next_node;
-	struct s_node	*prev_node;
-}	t_node;
-typedef struct s_stack
-{
-	t_node	*head_node;
-	t_node	*last_node;
-	int		size;
-}	t_stack;
-
-bool	double_swap(t_stack *a, t_stack *b);
-bool	swap(t_stack *stack);
-
-#endif // !PUSH_SWAP_H
