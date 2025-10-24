@@ -11,4 +11,10 @@ Stack **b** contains nothing
 **ss**: Both **sa** and **sb** at the same time
 **pa** (push a): Take element at the top of stack **b** and place it at the top of stack **a**
 **pb** (push b): Take element at the top of stack **a** and place it at the top of stack **b**
+**ra** (rotate a): Shift all elements of stack **a** up by 1
+**rb** (rotate b): Shift all elements of stack **b** up by 1
+**rr**: **ra** and **rb** at the same time
+**rra** (reverse rotate a): Shift all elements of stack **a** down by 1
+**rrb** (reverse rotate b): Shift all elements of stack **b** down by 1
+**rrr**: **rra** and **rrb** at the same time
 
