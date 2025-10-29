@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   double_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 14:59:50 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/10/23 15:52:36 by tlogtenb         ###   ########.fr       */
+/*   Created: 2025/10/29 21:58:57 by tlogtenb          #+#    #+#             */
+/*   Updated: 2025/10/29 22:02:54 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+#include "operations.h"
 
-# define PUSH_SWAP_H
-
-# include <stdbool.h>
-
-typedef struct s_node
+bool	double_swap(t_stack *a, t_stack *b)
 {
-	int				number;
-	struct s_node	*next_node;
-	struct s_node	*prev_node;
-}	t_node;
-typedef struct s_stack
+	swap(a);
+	swap(b);
+	return (true);
+}
+
+bool	double_rotate(t_stack *a, t_stack *b)
 {
-	t_node	*head_node;
-	t_node	*last_node;
-	int		size;
-}	t_stack;
+	rotate(a);
+	rotate(b);
+	return (true);
+}
 
-bool	double_swap(t_stack *a, t_stack *b);
-bool	swap(t_stack *stack);
-
-#endif // !PUSH_SWAP_H
+bool	double_r_rotate(t_stack *a, t_stack *b)
+{
+	r_rotate(a);
+	r_rotate(b);
+	return (true);
+}
