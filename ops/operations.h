@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:59:50 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/10/29 23:00:59 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/11/19 21:33:42 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
+#ifndef OPERATIONS_H 
 
-# define PUSH_SWAP_H
+# define OPERATIONS_H
 
 # include <stdbool.h>
 # include <stddef.h>
@@ -52,5 +52,8 @@ bool	rr(t_stack *a, t_stack *b);
 bool	rra(t_stack *a);
 bool	rrb(t_stack *b);
 bool	rrr(t_stack *a, t_stack *b);
+t_node	*new_node(long content);
+void	init_stack(t_stack *stack);
+void	stack_add_back(t_stack *stack, t_node *node);
 
-#endif // !PUSH_SWAP_H
+#endif
