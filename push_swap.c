@@ -21,17 +21,20 @@ int main(int argc, char **argv)
 	int		split_counter;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_node	*new_node;
+	t_node	*node;
 
 	if (argc == 1)
 		return (0);
 	counter = 1;
+	stack_a = init_stack();
+	stack_b = init_stack();
 	while (counter < argc)
 	{
 		if (!ft_strchr(argv[counter], ' '))
 		{
-			new_node = new_node(ft_atol(argv[counter]));
-			printf("number %d: %d\n", counter, ft_atoi(argv[counter]));
+			node = new_node(ft_atol(argv[counter]));
+			stack_add_back(stack_a, node);
+			printf("number %d: %ld\n", counter, node->number);
 		}
 		else
 		{
@@ -39,7 +42,9 @@ int main(int argc, char **argv)
 			split_counter = 0;
 			while (temp[split_counter])
 			{
-				printf("number %d (part %d): %d\n", counter, split_counter + 1, ft_atoi(temp[split_counter]));
+				node = new_node(ft_atol(temp[split_counter]));
+				stack_add_back(stack_a, node);
+				printf("number %d (part %d): %ld\n", counter, split_counter + 1, node->number);
 				split_counter++;
 			}
 		}

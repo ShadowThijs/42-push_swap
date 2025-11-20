@@ -26,12 +26,15 @@ t_node	*new_node(long content)
 	return (node);
 }
 
-void	init_stack(t_stack *stack)
+t_stack	*init_stack(void)
 {
+	t_stack	*stack;
+
+	stack = malloc(sizeof(t_stack));
 	stack->last_node = NULL;
 	stack->head_node = NULL;
 	stack->size = 0;
-	return ;
+	return (stack);
 }
 
 void	stack_add_back(t_stack *stack, t_node *node)

@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-size_t	is_space(char c)
+static size_t	is_space(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\r'
 		|| c == '\n' || c == '\f' || c == '\v')

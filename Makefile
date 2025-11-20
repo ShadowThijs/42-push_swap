@@ -1,23 +1,28 @@
-NAME = libft.a
+NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-MY_SOURCES =
+MAIN_FILE =	push_swap.c
 
-MY_OBJECTS = $(MY_SOURCES:.c=.o)
+LIBFT_FOLDER = libft
+LIBFT_NAME = libft.a
+OPS_FOLDER = ops
+OPS_NAME = libpushswap.a
 
 all: $(NAME)
 
-$(NAME): $(MY_OBJECTS)
-	ar rcs $(NAME) $(MY_OBJECTS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME):
+	@make -C $(LIBFT_FOLDER)
+	@make -C $(OPS_FOLDER)
+	$(CC) $(MAIN_FILE) $(LIBFT_FOLDER)/$(LIBFT_NAME) $(OPS_FOLDER)/$(OPS_NAME) -o $(NAME)
 
 clean:
-	rm -f $(MY_OBJECTS)
+	@make clean -C $(LIBFT_FOLDER)
+	@make clean -C $(OPS_FOLDER)
 
-fclean: clean
+fclean:
+	@make fclean -C $(LIBFT_FOLDER)
+	@make fclean -C $(OPS_FOLDER)
 	rm -f $(NAME)
 
 re: fclean all

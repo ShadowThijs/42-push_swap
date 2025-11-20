@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERATIONS_H 
+#ifndef OPERATIONS_H
 
 # define OPERATIONS_H
 
@@ -53,7 +53,7 @@ bool	rra(t_stack *a);
 bool	rrb(t_stack *b);
 bool	rrr(t_stack *a, t_stack *b);
 t_node	*new_node(long content);
-void	init_stack(t_stack *stack);
+t_stack	*init_stack(void);
 void	stack_add_back(t_stack *stack, t_node *node);
 
 #endif
