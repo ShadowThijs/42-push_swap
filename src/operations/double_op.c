@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_3.c                                   :+:      :+:    :+:   */
+/*   double_op.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 22:54:55 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/10/29 22:56:32 by tlogtenb         ###   ########.fr       */
+/*   Created: 2025/10/29 21:58:57 by tlogtenb          #+#    #+#             */
+/*   Updated: 2025/10/29 22:02:54 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
-#include <unistd.h>
+#include "../../include/operations.h"
 
-bool	rra(t_stack *a)
+bool	double_swap(t_stack *a, t_stack *b)
 {
-	r_rotate(a);
-	write(1, "rra\n", 4);
+	swap(a);
+	swap(b);
 	return (true);
 }
 
-bool	rrb(t_stack *b)
+bool	double_rotate(t_stack *a, t_stack *b)
 {
-	r_rotate(b);
-	write(1, "rrb\n", 4);
+	rotate(a);
+	rotate(b);
 	return (true);
 }
 
-bool	rrr(t_stack *a, t_stack *b)
+bool	double_r_rotate(t_stack *a, t_stack *b)
 {
 	r_rotate(a);
 	r_rotate(b);
-	write(1, "rrr\n", 4);
 	return (true);
 }

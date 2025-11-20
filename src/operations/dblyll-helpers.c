@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "../../include/operations.h"
 #include <stdlib.h>
 
 t_node	*new_node(long content)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "../../include/operations.h"
 
 void	single_node_push(t_stack *stack_1, t_stack *stack_2)
 {
@@ -46,9 +46,11 @@ void	node_push(t_stack *stack_1, t_stack *stack_2)
 	stack_2->head_node = head_b->next_node;
 	stack_2->size -= 1;
 	stack_1->head_node = head_b;
+	head_b->prev_node = NULL;
 	if (!head_a)
 	{
 		stack_1->last_node = head_b;
+		head_b->next_node = NULL;
 		stack_1->size = 1;
 		return ;
 	}

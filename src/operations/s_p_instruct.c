@@ -1,36 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_2.c                                   :+:      :+:    :+:   */
+/*   instructions_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 22:52:29 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/10/29 22:54:46 by tlogtenb         ###   ########.fr       */
+/*   Created: 2025/10/29 22:47:16 by tlogtenb          #+#    #+#             */
+/*   Updated: 2025/10/29 22:52:23 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
-#include <unistd.h>
+#include "../../include/operations.h"
 
-bool	ra(t_stack *a)
+bool	sa(t_stack *a)
 {
-	rotate(a);
-	write(1, "ra\n", 3);
+	swap(a);
+	write(1, "sa\n", 3);
 	return (true);
 }
 
-bool	rb(t_stack *b)
+bool	sb(t_stack *b)
 {
-	rotate(b);
-	write(1, "rb\n", 3);
+	swap(b);
+	write(1, "sb\n", 3);
 	return (true);
 }
 
-bool	rr(t_stack *a, t_stack *b)
+bool	ss(t_stack *a, t_stack *b)
 {
-	rotate(a);
-	rotate(b);
-	write(1, "rr\n", 3);
+	double_swap(a, b);
+	write(1, "ss\n", 3);
+	return (true);
+}
+
+bool	pa(t_stack *a, t_stack *b)
+{
+	push(a, b);
+	write(1, "pa\n", 3);
+	return (true);
+}
+
+bool	pb(t_stack *b, t_stack *a)
+{
+	push(b, a);
+	write(1, "pb\n", 3);
 	return (true);
 }
