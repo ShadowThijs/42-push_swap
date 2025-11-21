@@ -35,6 +35,8 @@ int	main(int argc, char **argv)
 			sa(a);
 		return (0);
 	}
+	if (a->size == 1)
+		return (0);
 	push_to_b(a, b);
 	sort_list_three(a);
 	move_to_a(a, b);

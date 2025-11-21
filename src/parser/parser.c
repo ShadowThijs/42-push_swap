@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../include/parser.h"
+#include <limits.h>
 #include <stdlib.h>
 
 static bool	is_valid_number(char *str)
@@ -33,6 +34,8 @@ static bool	parse_checks(char *value, t_stack *stack)
 	t_node	*node;
 
 	if (!is_valid_number(value))
+		return (false);
+	if (atol(value) > 2147483647 || atol(value) < -2147483648)
 		return (false);
 	if (!stack->head_node)
 		return (true);
