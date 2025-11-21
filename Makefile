@@ -33,7 +33,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(SRC_OBJ)
 	@echo -e "\n$(BLUE)$(BOLD)[3/3]$(RESET) $(GREEN)Linking $(NAME)...$(RESET)"
-	@$(CC) $(CFLAGS) src/main.c $(SRC_OBJ) $(LIBFT) -o $(NAME)
+	@$(CC) -g $(CFLAGS) src/main.c $(SRC_OBJ) $(LIBFT) -o $(NAME)
 	@echo -e "$(GREEN)$(BOLD)✓ Build complete: $(NAME)$(RESET)"
 	@rm -f $(LIBFT_PROGRESS) $(SRC_PROGRESS)
 

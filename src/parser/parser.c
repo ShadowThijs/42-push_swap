@@ -20,7 +20,8 @@ static bool	is_valid_number(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < '0' && str[i] > '9')
+		if ((str[i] < '0' && str[i] != '-' && str[i] != '+')
+			|| (str[i] > '9' && str[i] != '-' && str[i] != '+'))
 			return (false);
 		i++;
 	}

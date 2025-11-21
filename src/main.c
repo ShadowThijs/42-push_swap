@@ -17,22 +17,26 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*a;
+	t_stack	*b;
 
 	if (argc == 1)
 		return (0);
-	stack_a = init_stack();
-	stack_b = init_stack();
-	if (!parse_arguments(argc, argv, stack_a))
+	a = init_stack();
+	b = init_stack();
+	if (!parse_arguments(argc, argv, a))
 	{
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	while (stack_a->size != 3)
+	if (a->size == 2)
 	{
-		pb(stack_b, stack_a);
+		if (a->head_node->number > a->last_node->number)
+			sa(a);
+		return (0);
 	}
-	sort_list_three(stack_a);
+	push_to_b(a, b);
+	sort_list_three(a);
+	move_to_a(a, b);
 	return (0);
 }

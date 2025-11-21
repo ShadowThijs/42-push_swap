@@ -11,31 +11,48 @@
 /* ************************************************************************** */
 
 #include "../../include/operations.h"
+#include "../../include/sorting.h"
+#include <limits.h>
 
-void	sort_list_three(t_stack *stack_a)
+void	sort_list_three(t_stack *a)
 {
 	long	first_a;
 	long	next_a;
 	long	last_a;
 
-	first_a = stack_a->head_node->number;
-	next_a = stack_a->head_node->next_node->number;
-	last_a = stack_a->last_node->number;
+	first_a = a->head_node->number;
+	next_a = a->head_node->next_node->number;
+	last_a = a->last_node->number;
 	if (first_a < next_a && next_a > last_a && first_a < last_a)
 	{
-		ra(stack_a);
-		sa(stack_a);
-		rra(stack_a);
+		sa(a);
+		ra(a);
 	}
 	else if (first_a > next_a && next_a < last_a && first_a < last_a)
-		sa(stack_a);
+		sa(a);
 	else if (first_a < next_a && next_a > last_a && first_a > last_a)
-		rra(stack_a);
+		rra(a);
 	else if (first_a > next_a && next_a < last_a && first_a > last_a)
-		ra(stack_a);
+		ra(a);
 	else if (first_a > next_a && next_a > last_a && first_a > last_a)
 	{
-		sa(stack_a);
-		rra(stack_a);
+		sa(a);
+		rra(a);
+	}
+}
+
+void	push_to_b(t_stack *a, t_stack *b)
+{
+	t_node	*cheapest;
+
+	if (a->size > 3)
+	{
+		pb(b, a);
+		pb(b, a);
+	}
+	while (a->size > 3)
+	{
+		cheapest = find_cheapest_node(a, b);
+		exec_cheapest_move(cheapest, a, b);
 	}
 }
