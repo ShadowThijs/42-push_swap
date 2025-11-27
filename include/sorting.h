@@ -6,7 +6,7 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 23:33:41 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/11/20 23:33:42 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:10:39 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ void			exec_cheapest_move(t_node *node, t_stack *a, t_stack *b);
 void			move_to_a(t_stack *a, t_stack *b);
 t_search_result	find_closest_bigger_in_a(long value, t_stack *a);
 t_search_result	find_smallest_in_stack(t_stack *stack);
+void	free_stack(t_stack *a);
+void	free_node(t_stack *a, t_node *node);
 
 #endif

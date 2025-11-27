@@ -6,7 +6,7 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 00:17:07 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/11/21 00:17:09 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:10:43 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ int	main(int argc, char **argv)
 	push_to_b(a, b);
 	sort_list_three(a);
 	move_to_a(a, b);
+	free_stack(a);
+	free_stack(b);
 	return (0);
 }

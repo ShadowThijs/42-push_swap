@@ -13,6 +13,7 @@
 #include "../../include/operations.h"
 #include "../../include/sorting.h"
 #include <limits.h>
+#include <stdbool.h>
 
 static bool	calc_cheap_rot(t_stack *a)
 {
@@ -30,32 +31,25 @@ static bool	calc_cheap_rot(t_stack *a)
 		index++;
 	}
 	if (index > (a->size / 2))
-		return (1);
-	return (0);
+		return (true);
+	return (false);
 }
 
 static void	final_rot_b(t_stack *b)
 {
-	long	second;
-	long	first;
-	t_node	*node;
+	bool	rot;
 
 	if (!b->head_node)
 		return ;
-	node = b->head_node;
-	first = node->number;
-	second = node->next_node->number;
-	while (first > second)
+	rot = calc_cheap_rot(b);
+	while (b->head_node->number < b->last_node->number)
 	{
-		if (calc_cheap_rot(b))
+		if (rot)
 			rrb(b);
 		else
 			rb(b);
-		node = b->head_node;
-		second = node->next_node->number;
-		first = node->number;
 	}
-	if (calc_cheap_rot(b))
+	if (rot)
 		rrb(b);
 	else
 		rb(b);
