@@ -14,6 +14,26 @@
 #include "../../include/sorting.h"
 #include <limits.h>
 
+static bool	calc_cheap_rot(t_stack *a)
+{
+	t_node	*cur;
+	t_node	*next;
+	int		index;
+
+	index = 0;
+	cur = a->head_node;
+	next = cur->next_node;
+	while (cur->number > next->number)
+	{
+		cur = next;
+		next = cur->next_node;
+		index++;
+	}
+	if (index > (a->size / 2))
+		return (1);
+	return (0);
+}
+
 static void	final_rot_b(t_stack *b)
 {
 	long	second;
@@ -27,12 +47,18 @@ static void	final_rot_b(t_stack *b)
 	second = node->next_node->number;
 	while (first > second)
 	{
-		rb(b);
+		if (calc_cheap_rot(b))
+			rrb(b);
+		else
+			rb(b);
 		node = b->head_node;
 		second = node->next_node->number;
 		first = node->number;
 	}
-	rb(b);
+	if (calc_cheap_rot(b))
+		rrb(b);
+	else
+		rb(b);
 }
 
 static int	get_target_pos(long b_val, t_stack *a)
