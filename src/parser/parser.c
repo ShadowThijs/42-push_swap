@@ -35,6 +35,7 @@ static bool	parse_checks(char *value, t_stack *stack)
 
 	if (!is_valid_number(value))
 		return (false);
+	// TODO: Fix dynamic atoi because wrap around with +LONG_MAX or -LONG_MIN
 	if (atol(value) > 2147483647 || atol(value) < -2147483648)
 		return (false);
 	if (!stack->head_node)
