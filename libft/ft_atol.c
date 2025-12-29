@@ -6,10 +6,11 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:27:52 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/11/19 21:28:34 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/12/29 19:54:14 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
 
 static size_t	is_space(char c)
@@ -29,6 +30,8 @@ long	ft_atol(const char *nptr)
 	i = 0;
 	sign = 1;
 	ret = 0;
+	if (ft_strlen(nptr) > 12)
+		return (2147483649);
 	while (is_space(nptr[i]))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')

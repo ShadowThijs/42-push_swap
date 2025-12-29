@@ -6,7 +6,7 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 22:14:39 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/11/20 22:16:15 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/12/29 19:52:24 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ static bool	parse_checks(char *value, t_stack *stack)
 	if (!is_valid_number(value))
 		return (false);
 	// TODO: Fix dynamic atoi because wrap around with +LONG_MAX or -LONG_MIN
-	if (atol(value) > 2147483647 || atol(value) < -2147483648)
+	if (ft_atol(value) > 2147483647 || ft_atol(value) < -2147483648)
 		return (false);
 	if (!stack->head_node)
 		return (true);
 	node = stack->head_node;
 	while (node->next_node)
 	{
-		if (node->number == atol(value))
+		if (node->number == ft_atol(value))
 			return (false);
 		node = node->next_node;
 	}
