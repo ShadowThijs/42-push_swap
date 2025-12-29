@@ -6,13 +6,12 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 22:14:39 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/12/29 20:05:02 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/12/29 20:09:36 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/parser.h"
 #include <limits.h>
-#include <stdlib.h>
 
 static bool	is_valid_number(char *str)
 {
