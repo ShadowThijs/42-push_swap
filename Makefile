@@ -1,6 +1,6 @@
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I./include -I./libft
+CFLAGS = -g -Wall -Wextra -Werror -I./include -I./libft
 
 # Directories
 SRC_DIR = src

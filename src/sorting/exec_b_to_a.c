@@ -6,7 +6,7 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 02:58:34 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/11/21 02:58:35 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/12/29 19:38:45 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static bool	calc_cheap_rot(t_stack *a)
 	index = 0;
 	cur = a->head_node;
 	next = cur->next_node;
-	while (cur->number > next->number)
+	while (next != NULL && cur->number > next->number)
 	{
 		cur = next;
 		next = cur->next_node;
