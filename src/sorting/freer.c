@@ -6,7 +6,7 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 17:03:37 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/11/27 17:09:23 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2025/12/29 20:08:44 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	free_node(t_stack *a, t_node *node)
 void	free_stack(t_stack *a)
 {
 	t_node	*next;
-	
+
 	while (a->size > 0)
 	{
 		next = a->head_node->next_node;
