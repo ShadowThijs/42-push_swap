@@ -1,3 +1,5 @@
 *.o
 *.a
 visualizer/*
+push_swap
+imgui.ini
