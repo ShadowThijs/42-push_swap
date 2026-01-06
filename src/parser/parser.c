@@ -6,7 +6,7 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 22:14:39 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/12/29 20:09:36 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:01:21 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ static bool	parse_checks(char *value, t_stack *stack)
 			return (false);
 		node = node->next_node;
 	}
+	if (node->number == ft_atol(value))
+		return (false);
 	return (true);
 }
 

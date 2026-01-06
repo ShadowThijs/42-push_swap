@@ -6,7 +6,7 @@
 /*   By: tlogtenb <tlogtenb@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 23:33:41 by tlogtenb          #+#    #+#             */
-/*   Updated: 2025/12/29 20:08:25 by tlogtenb         ###   ########.fr       */
+/*   Updated: 2026/01/06 15:45:55 by tlogtenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ t_search_result	find_closest_bigger_in_a(long value, t_stack *a);
 t_search_result	find_smallest_in_stack(t_stack *stack);
 void			free_stack(t_stack *a);
 void			free_node(t_stack *a, t_node *node);
+bool			input_sorted(t_stack *a, t_stack *b);
 
 #endif
